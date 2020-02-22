@@ -191,6 +191,12 @@
             <version>${lombokVersion}</version>
             <scope>provided</scope>
         </dependency>
+        <!--ehcache-->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>${ehcacheCoreVersion}</version>
+        </dependency>
     </dependencies>
     <build>
         <resources>
