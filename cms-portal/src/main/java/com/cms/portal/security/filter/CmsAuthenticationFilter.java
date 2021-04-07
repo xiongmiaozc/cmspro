@@ -2,11 +2,14 @@ package com.cms.portal.security.filter;
 
 import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 
-/**
- * 个人微信: 15254124776
- * 个人qq:  2301887641
- *
- * @date: 2020/02/22/17:28
- */
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
 public class CmsAuthenticationFilter extends FormAuthenticationFilter {
+
+    @Override
+    protected boolean isLoginRequest(ServletRequest request, ServletResponse response) {
+        return this.pathsMatch(this.getLoginUrl(), request) ||
+                this.pathsMatch("/admin/cms/login.do", request) ;
+    }
 }
